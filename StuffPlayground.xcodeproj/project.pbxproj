@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD247F8023495F7000F89CC6 /* MiFare.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD247F7F23495F7000F89CC6 /* MiFare.swift */; };
+		CD247F822349604A00F89CC6 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD247F812349604A00F89CC6 /* Utils.swift */; };
+		CD261A95234BEB5C00E3E9EA /* CombineCoreNFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD261A94234BEB5C00E3E9EA /* CombineCoreNFC.swift */; };
+		CD2C2EB2233AE0F200BF4BAA /* ItemsListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C2EB1233AE0F200BF4BAA /* ItemsListTabView.swift */; };
+		CD2C2EB6233C2F4A00BF4BAA /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2C2EB5233C2F4A00BF4BAA /* CoreNFC.framework */; };
+		CDC8D4D023625EE50015D588 /* NFCNDEFQueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D4CF23625EE50015D588 /* NFCNDEFQueryResponse.swift */; };
+		CDC8D4D223625F300015D588 /* TagErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D4D123625F300015D588 /* TagErrors.swift */; };
+		CDC8D4D423625F5E0015D588 /* NFCNDEFTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D4D323625F5E0015D588 /* NFCNDEFTag.swift */; };
 		CDE9969B233837D7007C05A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE9969A233837D7007C05A3 /* AppDelegate.swift */; };
 		CDE9969D233837D7007C05A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE9969C233837D7007C05A3 /* SceneDelegate.swift */; };
 		CDE996A0233837D7007C05A3 /* StuffPlayground.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CDE9969E233837D7007C05A3 /* StuffPlayground.xcdatamodeld */; };
@@ -16,6 +24,10 @@
 		CDE996AA233837DB007C05A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDE996A8233837DB007C05A3 /* LaunchScreen.storyboard */; };
 		CDE996B5233837DB007C05A3 /* StuffPlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE996B4233837DB007C05A3 /* StuffPlaygroundTests.swift */; };
 		CDE996C0233837DB007C05A3 /* StuffPlaygroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE996BF233837DB007C05A3 /* StuffPlaygroundUITests.swift */; };
+		CDE996CE23398B0A007C05A3 /* ItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE996CD23398B0A007C05A3 /* ItemsList.swift */; };
+		CDE996D02339FEA5007C05A3 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE996CF2339FEA5007C05A3 /* AddItemView.swift */; };
+		CDFB83382344009C00F5F1BA /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB83372344009C00F5F1BA /* UserData.swift */; };
+		CDFB833B2344082C00F5F1BA /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = CDFB833A2344082C00F5F1BA /* PromiseKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +48,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD247F7F23495F7000F89CC6 /* MiFare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiFare.swift; sourceTree = "<group>"; };
+		CD247F812349604A00F89CC6 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		CD261A94234BEB5C00E3E9EA /* CombineCoreNFC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineCoreNFC.swift; sourceTree = "<group>"; };
+		CD2C2EB1233AE0F200BF4BAA /* ItemsListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListTabView.swift; sourceTree = "<group>"; };
+		CD2C2EB3233C2E7A00BF4BAA /* StuffPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StuffPlayground.entitlements; sourceTree = "<group>"; };
+		CD2C2EB5233C2F4A00BF4BAA /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
+		CDC8D4CF23625EE50015D588 /* NFCNDEFQueryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCNDEFQueryResponse.swift; sourceTree = "<group>"; };
+		CDC8D4D123625F300015D588 /* TagErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagErrors.swift; sourceTree = "<group>"; };
+		CDC8D4D323625F5E0015D588 /* NFCNDEFTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCNDEFTag.swift; sourceTree = "<group>"; };
 		CDE99697233837D7007C05A3 /* StuffPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StuffPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE9969A233837D7007C05A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDE9969C233837D7007C05A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +72,9 @@
 		CDE996BB233837DB007C05A3 /* StuffPlaygroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StuffPlaygroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE996BF233837DB007C05A3 /* StuffPlaygroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuffPlaygroundUITests.swift; sourceTree = "<group>"; };
 		CDE996C1233837DB007C05A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDE996CD23398B0A007C05A3 /* ItemsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsList.swift; sourceTree = "<group>"; };
+		CDE996CF2339FEA5007C05A3 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		CDFB83372344009C00F5F1BA /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD2C2EB6233C2F4A00BF4BAA /* CoreNFC.framework in Frameworks */,
+				CDFB833B2344082C00F5F1BA /* PromiseKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +104,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD2C2EB4233C2F4A00BF4BAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD2C2EB5233C2F4A00BF4BAA /* CoreNFC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDC8D4CE23625EA60015D588 /* CombinedNFC */ = {
+			isa = PBXGroup;
+			children = (
+				CDC8D4CF23625EE50015D588 /* NFCNDEFQueryResponse.swift */,
+				CDC8D4D123625F300015D588 /* TagErrors.swift */,
+				CDC8D4D323625F5E0015D588 /* NFCNDEFTag.swift */,
+			);
+			path = CombinedNFC;
+			sourceTree = "<group>";
+		};
 		CDE9968E233837D7007C05A3 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +129,7 @@
 				CDE996B3233837DB007C05A3 /* StuffPlaygroundTests */,
 				CDE996BE233837DB007C05A3 /* StuffPlaygroundUITests */,
 				CDE99698233837D7007C05A3 /* Products */,
+				CD2C2EB4233C2F4A00BF4BAA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +146,23 @@
 		CDE99699233837D7007C05A3 /* StuffPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				CDC8D4CE23625EA60015D588 /* CombinedNFC */,
+				CD2C2EB3233C2E7A00BF4BAA /* StuffPlayground.entitlements */,
+				CDE996AB233837DB007C05A3 /* Info.plist */,
+				CDE996A3233837DB007C05A3 /* Assets.xcassets */,
+				CDE996A5233837DB007C05A3 /* Preview Content */,
+				CDE9969E233837D7007C05A3 /* StuffPlayground.xcdatamodeld */,
+				CDE996A8233837DB007C05A3 /* LaunchScreen.storyboard */,
 				CDE9969A233837D7007C05A3 /* AppDelegate.swift */,
 				CDE9969C233837D7007C05A3 /* SceneDelegate.swift */,
 				CDE996A1233837D7007C05A3 /* ContentView.swift */,
-				CDE996A3233837DB007C05A3 /* Assets.xcassets */,
-				CDE996A8233837DB007C05A3 /* LaunchScreen.storyboard */,
-				CDE996AB233837DB007C05A3 /* Info.plist */,
-				CDE9969E233837D7007C05A3 /* StuffPlayground.xcdatamodeld */,
-				CDE996A5233837DB007C05A3 /* Preview Content */,
+				CD2C2EB1233AE0F200BF4BAA /* ItemsListTabView.swift */,
+				CDE996CD23398B0A007C05A3 /* ItemsList.swift */,
+				CDE996CF2339FEA5007C05A3 /* AddItemView.swift */,
+				CDFB83372344009C00F5F1BA /* UserData.swift */,
+				CD247F7F23495F7000F89CC6 /* MiFare.swift */,
+				CD247F812349604A00F89CC6 /* Utils.swift */,
+				CD261A94234BEB5C00E3E9EA /* CombineCoreNFC.swift */,
 			);
 			path = StuffPlayground;
 			sourceTree = "<group>";
@@ -155,6 +209,9 @@
 			dependencies = (
 			);
 			name = StuffPlayground;
+			packageProductDependencies = (
+				CDFB833A2344082C00F5F1BA /* PromiseKit */,
+			);
 			productName = StuffPlayground;
 			productReference = CDE99697233837D7007C05A3 /* StuffPlayground.app */;
 			productType = "com.apple.product-type.application";
@@ -227,6 +284,9 @@
 				Base,
 			);
 			mainGroup = CDE9968E233837D7007C05A3;
+			packageReferences = (
+				CDFB83392344082C00F5F1BA /* XCRemoteSwiftPackageReference "PromiseKit" */,
+			);
 			productRefGroup = CDE99698233837D7007C05A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -270,10 +330,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDE996CE23398B0A007C05A3 /* ItemsList.swift in Sources */,
+				CDC8D4D423625F5E0015D588 /* NFCNDEFTag.swift in Sources */,
+				CD247F8023495F7000F89CC6 /* MiFare.swift in Sources */,
+				CDE996D02339FEA5007C05A3 /* AddItemView.swift in Sources */,
 				CDE9969B233837D7007C05A3 /* AppDelegate.swift in Sources */,
+				CD261A95234BEB5C00E3E9EA /* CombineCoreNFC.swift in Sources */,
 				CDE9969D233837D7007C05A3 /* SceneDelegate.swift in Sources */,
+				CDC8D4D223625F300015D588 /* TagErrors.swift in Sources */,
 				CDE996A2233837D7007C05A3 /* ContentView.swift in Sources */,
+				CD247F822349604A00F89CC6 /* Utils.swift in Sources */,
 				CDE996A0233837D7007C05A3 /* StuffPlayground.xcdatamodeld in Sources */,
+				CDFB83382344009C00F5F1BA /* UserData.swift in Sources */,
+				CDC8D4D023625EE50015D588 /* NFCNDEFQueryResponse.swift in Sources */,
+				CD2C2EB2233AE0F200BF4BAA /* ItemsListTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,8 +508,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StuffPlayground/StuffPlayground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StuffPlayground/Preview Content\"";
+				DEVELOPMENT_TEAM = WA4JA55S9R;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = StuffPlayground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -457,8 +529,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StuffPlayground/StuffPlayground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"StuffPlayground/Preview Content\"";
+				DEVELOPMENT_TEAM = WA4JA55S9R;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = StuffPlayground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -592,6 +666,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CDFB83392344082C00F5F1BA /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CDFB833A2344082C00F5F1BA /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDFB83392344082C00F5F1BA /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CDE9969E233837D7007C05A3 /* StuffPlayground.xcdatamodeld */ = {

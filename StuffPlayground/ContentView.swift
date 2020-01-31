@@ -13,21 +13,19 @@ struct ContentView: View {
  
     var body: some View {
         TabView(selection: $selection){
-            Text("First View")
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image("first")
-                        Text("First")
-                    }
+            ItemsListTabView()
+              .tabItem {
+                VStack {
+                  Image("first")
+                  Text("Items")
                 }
-                .tag(0)
-            Text("Second View")
-                .font(.title)
+              }
+              .tag(0)
+            AddItemView()
                 .tabItem {
                     VStack {
                         Image("second")
-                        Text("Second")
+                        Text("Add Item")
                     }
                 }
                 .tag(1)
@@ -37,6 +35,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+      let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+      return ContentView().environment(\.managedObjectContext, context)
     }
 }
