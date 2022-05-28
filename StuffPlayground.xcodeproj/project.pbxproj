@@ -12,6 +12,10 @@
 		CD261A95234BEB5C00E3E9EA /* CombineCoreNFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD261A94234BEB5C00E3E9EA /* CombineCoreNFC.swift */; };
 		CD2C2EB2233AE0F200BF4BAA /* ItemsListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C2EB1233AE0F200BF4BAA /* ItemsListTabView.swift */; };
 		CD2C2EB6233C2F4A00BF4BAA /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2C2EB5233C2F4A00BF4BAA /* CoreNFC.framework */; };
+		CD96A7682842077700528337 /* ScannedNFCTagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD96A7672842077700528337 /* ScannedNFCTagModel.swift */; };
+		CD96A76A284207DF00528337 /* NFCNDEFReaderSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD96A769284207DF00528337 /* NFCNDEFReaderSession.swift */; };
+		CD96A76C2842084700528337 /* NFCNDEFSessionAndTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD96A76B2842084700528337 /* NFCNDEFSessionAndTag.swift */; };
+		CD96A76E28420BCF00528337 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD96A76D28420BCF00528337 /* Future.swift */; };
 		CDC8D4D023625EE50015D588 /* NFCNDEFQueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D4CF23625EE50015D588 /* NFCNDEFQueryResponse.swift */; };
 		CDC8D4D223625F300015D588 /* TagErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D4D123625F300015D588 /* TagErrors.swift */; };
 		CDC8D4D423625F5E0015D588 /* NFCNDEFTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC8D4D323625F5E0015D588 /* NFCNDEFTag.swift */; };
@@ -54,6 +58,10 @@
 		CD2C2EB1233AE0F200BF4BAA /* ItemsListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListTabView.swift; sourceTree = "<group>"; };
 		CD2C2EB3233C2E7A00BF4BAA /* StuffPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StuffPlayground.entitlements; sourceTree = "<group>"; };
 		CD2C2EB5233C2F4A00BF4BAA /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
+		CD96A7672842077700528337 /* ScannedNFCTagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedNFCTagModel.swift; sourceTree = "<group>"; };
+		CD96A769284207DF00528337 /* NFCNDEFReaderSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCNDEFReaderSession.swift; sourceTree = "<group>"; };
+		CD96A76B2842084700528337 /* NFCNDEFSessionAndTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCNDEFSessionAndTag.swift; sourceTree = "<group>"; };
+		CD96A76D28420BCF00528337 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 		CDC8D4CF23625EE50015D588 /* NFCNDEFQueryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCNDEFQueryResponse.swift; sourceTree = "<group>"; };
 		CDC8D4D123625F300015D588 /* TagErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagErrors.swift; sourceTree = "<group>"; };
 		CDC8D4D323625F5E0015D588 /* NFCNDEFTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCNDEFTag.swift; sourceTree = "<group>"; };
@@ -118,6 +126,9 @@
 				CDC8D4CF23625EE50015D588 /* NFCNDEFQueryResponse.swift */,
 				CDC8D4D123625F300015D588 /* TagErrors.swift */,
 				CDC8D4D323625F5E0015D588 /* NFCNDEFTag.swift */,
+				CD96A769284207DF00528337 /* NFCNDEFReaderSession.swift */,
+				CD96A76B2842084700528337 /* NFCNDEFSessionAndTag.swift */,
+				CD96A76D28420BCF00528337 /* Future.swift */,
 			);
 			path = CombinedNFC;
 			sourceTree = "<group>";
@@ -163,6 +174,7 @@
 				CD247F7F23495F7000F89CC6 /* MiFare.swift */,
 				CD247F812349604A00F89CC6 /* Utils.swift */,
 				CD261A94234BEB5C00E3E9EA /* CombineCoreNFC.swift */,
+				CD96A7672842077700528337 /* ScannedNFCTagModel.swift */,
 			);
 			path = StuffPlayground;
 			sourceTree = "<group>";
@@ -259,7 +271,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "Patrick Quinn-Graham";
 				TargetAttributes = {
 					CDE99696233837D7007C05A3 = {
@@ -330,19 +342,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD96A76A284207DF00528337 /* NFCNDEFReaderSession.swift in Sources */,
 				CDE996CE23398B0A007C05A3 /* ItemsList.swift in Sources */,
 				CDC8D4D423625F5E0015D588 /* NFCNDEFTag.swift in Sources */,
 				CD247F8023495F7000F89CC6 /* MiFare.swift in Sources */,
 				CDE996D02339FEA5007C05A3 /* AddItemView.swift in Sources */,
 				CDE9969B233837D7007C05A3 /* AppDelegate.swift in Sources */,
+				CD96A76E28420BCF00528337 /* Future.swift in Sources */,
 				CD261A95234BEB5C00E3E9EA /* CombineCoreNFC.swift in Sources */,
 				CDE9969D233837D7007C05A3 /* SceneDelegate.swift in Sources */,
 				CDC8D4D223625F300015D588 /* TagErrors.swift in Sources */,
 				CDE996A2233837D7007C05A3 /* ContentView.swift in Sources */,
 				CD247F822349604A00F89CC6 /* Utils.swift in Sources */,
+				CD96A7682842077700528337 /* ScannedNFCTagModel.swift in Sources */,
 				CDE996A0233837D7007C05A3 /* StuffPlayground.xcdatamodeld in Sources */,
 				CDFB83382344009C00F5F1BA /* UserData.swift in Sources */,
 				CDC8D4D023625EE50015D588 /* NFCNDEFQueryResponse.swift in Sources */,
+				CD96A76C2842084700528337 /* NFCNDEFSessionAndTag.swift in Sources */,
 				CD2C2EB2233AE0F200BF4BAA /* ItemsListTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +432,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -476,6 +493,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

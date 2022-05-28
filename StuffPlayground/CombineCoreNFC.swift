@@ -12,26 +12,6 @@ import CoreNFC
 import PromiseKit
 import Combine
 
-extension NFCNDEFReaderSession {
-  func connectAsync(to tag: NFCNDEFTag) -> Future<Void, Error> {
-    Future { promise in
-      self.connect(to: tag) { error in
-        if let error = error {
-          promise(.failure(error))
-          return
-        }
-        
-        promise(.success(()))
-      }
-    }
-  }
-}
-
-struct NFCNDEFSessionAndTag {
-  let session: NFCNDEFReaderSession
-  let tag: NFCNDEFTag
-}
-
 /// A custom subscription to capture UIControl target events.
 final class CombinedNFCNDEFReaderSessionSubscription<SubscriberType: Subscriber>: NSObject, Subscription, NFCNDEFReaderSessionDelegate where SubscriberType.Input == NFCNDEFSessionAndTag, SubscriberType.Failure == Error {
     private var subscriber: SubscriberType?
@@ -41,7 +21,7 @@ final class CombinedNFCNDEFReaderSessionSubscription<SubscriberType: Subscriber>
       self.subscriber = subscriber
       super.init()
       self.readerSession = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: true)
-      print("CombinedNFCNDEFReaderSessionSubscription.startNDEFScan() \(self) \(String(describing: self.readerSession))")
+//      print("CombinedNFCNDEFReaderSessionSubscription.startNDEFScan() \(self) \(String(describing: self.readerSession))")
     }
 
     func request(_ demand: Subscribers.Demand) {
@@ -62,15 +42,18 @@ final class CombinedNFCNDEFReaderSessionSubscription<SubscriberType: Subscriber>
     func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {}
 
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-      print("NFCNDEFReaderSession did invalidate with error! \(error)")
       if let readerError = error as? NFCReaderError {
          if (readerError.code != .readerSessionInvalidationErrorFirstNDEFTagRead)
                    && (readerError.code != .readerSessionInvalidationErrorUserCanceled) {
-          subscriber?.receive(completion: .failure(readerError))
+
+           print("NFCNDEFReaderSession did invalidate with NFCReaderError! \(error)")
+
+           subscriber?.receive(completion: .failure(readerError))
          } else {
           subscriber?.receive(completion: .finished)
         }
       } else {
+        print("NFCNDEFReaderSession did invalidate with error! \(error)")
         subscriber?.receive(completion: .failure(error))
       }
     }
@@ -120,11 +103,21 @@ class CombinedNFCNDEFReaderSession2 {
   }
   
   func startNDEFScan() -> AnyPublisher<String, Error> {
-    print("startNDEFScan2!")
+//    print("startNDEFScan2!")
     return CombinedNFCNDEFReaderSessionPublisher()
       .flatMap(maxPublishers: .max(1)) { sessionAndTag -> AnyPublisher<String, Error> in
         let session = sessionAndTag.session
         let tag = sessionAndTag.tag
+        
+//        Future {
+//          try await session.connect(to: tag)
+//          print("Connected to tag! \(tag)")
+//
+//          let (ndefStatus, capacity) = try await tag.queryNDEFStatus()
+//          
+//          print("Tag has capacity \(capacity)")
+//          let message = try await tag.readNDEF()
+//        }
         
         return session.connectAsync(to: tag)
         .flatMap { nothing -> Future<NFCNDEFQueryResponse, Error> in
@@ -163,9 +156,11 @@ class CombinedNFCNDEFReaderSession2 {
           return Just(uri.pathComponents[1]).setFailureType(to: Error.self).eraseToAnyPublisher()
         }
         .catch { error -> Fail<String, Error> in
+          print("* catch error \(error), invalidating...")
           session.invalidate(errorMessage: self.invalidateMessage(forError: error))
           return Fail(error: error)
         }.map { (tagId: String) -> String in
+          print("* got tagId \(tagId), invalidating...")
           session.invalidate()
           return tagId
         }.eraseToAnyPublisher()

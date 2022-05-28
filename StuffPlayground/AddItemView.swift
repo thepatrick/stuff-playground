@@ -11,35 +11,6 @@ import SwiftUI
 import CoreNFC
 import Combine
 
-class NewItemModel : ObservableObject {
-  private(set) var objectWillChange = PassthroughSubject<NewItemModel, Never>()
-  
-  var name: String = "" {
-    didSet {
-      objectWillChange.send(self)
-    }
-  }
-  var tagID: String? {
-    didSet {
-      objectWillChange.send(self)
-    }
-  }
-  
-  
-  private var lastNDEFScanner: CombinedNFCNDEFReaderSession2?
-  private var tagThing: AnyCancellable?
-  
-  func claimNFCTag() {
-    lastNDEFScanner = CombinedNFCNDEFReaderSession2()
-    tagThing = lastNDEFScanner!.startNDEFScan().sink(receiveCompletion: { err in
-      print("Maybe Could Not Get Tag? \(err)")
-    }, receiveValue: { tagId in
-      print("Got tag \(tagId)")
-      self.tagID = tagId
-    })
-  }
-}
-
 struct AddItemView: View {
   @EnvironmentObject var userData: UserData
   @Environment(\.managedObjectContext) var managedObjectContext
@@ -47,13 +18,12 @@ struct AddItemView: View {
   @State private var lastNDEFScanner: CombinedNFCNDEFReaderSession2?
   @State private var tagThing: AnyCancellable?
   @State private var name = ""
-  @State private var model = NewItemModel()
+  @StateObject var model = ScannedNFCTagModel()
     
   var body: some View {
     NavigationView {
       Form {
         Section {
-          // Text("Name")
           TextField("Name", text: $name)
         }
         Section {

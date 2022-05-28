@@ -13,16 +13,16 @@ import Combine
 extension NFCNDEFTag {
   
   func queryNDEFStatusAsync() -> Future<NFCNDEFQueryResponse, Error> {
-    Future { promise in
-      self.queryNDEFStatus { (status, capacity, error) in
-        print("Hi")
-        if let queryError = error {
-          promise(.failure(queryError))
-          return
-        }
-
-        promise(.success(NFCNDEFQueryResponse(status: status, capacity: capacity)))
-      }
+    Future {
+      let (status, capacity) = try await self.queryNDEFStatus()
+      
+      return NFCNDEFQueryResponse(status: status, capacity: capacity)
+    }
+  }
+  
+  func readNDEFAsyncA() -> Future<NFCNDEFMessage, Error> {
+    Future {
+      try await self.readNDEF()
     }
   }
 
@@ -30,6 +30,8 @@ extension NFCNDEFTag {
     Future { promise in
       self.readNDEF { (message, error) in
         if let readError = error {
+          // if .Code == 403 then provide default value from below instead
+          print("readNDEFAsyncError: \(readError)")
           promise(.failure(readError))
           return
         }
@@ -46,11 +48,16 @@ extension NFCNDEFTag {
     }
   }
   
+  func writeNDEFAsyncA(_ message: NFCNDEFMessage) -> Future<Void, Error> {
+    Future {
+      try await self.writeNDEF(message)
+    }
+  }
+  
   func writeNDEFAsync(_ message: NFCNDEFMessage) -> Future<Void, Error> {
     Future { promise in
       self.writeNDEF(message) { error in
         if let error = error {
-//          session.invalidate(errorMessage: "Connection error. Please try again.")
           promise(.failure(error))
           return
         }
