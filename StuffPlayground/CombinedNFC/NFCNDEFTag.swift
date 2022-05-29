@@ -10,6 +10,12 @@ import Foundation
 import CoreNFC
 import Combine
 
+extension NFCNDEFPayload {
+  static func emptyPayload() -> NFCNDEFPayload {
+    NFCNDEFPayload(format: NFCTypeNameFormat.empty, type: Data(), identifier: Data(), payload: Data())
+  }
+}
+
 extension NFCNDEFTag {
   
   func queryNDEFStatusAsync() -> Future<NFCNDEFQueryResponse, Error> {
@@ -23,6 +29,20 @@ extension NFCNDEFTag {
   func readNDEFAsyncA() -> Future<NFCNDEFMessage, Error> {
     Future {
       try await self.readNDEF()
+    }
+  }
+  
+  func readNDEFWithDefault() async throws -> NFCNDEFMessage {
+    do {
+      let message = try await self.readNDEF()
+      
+      return message
+    } catch let error as NFCReaderError {
+      if error.code == NFCReaderError.Code.ndefReaderSessionErrorZeroLengthMessage {
+        return NFCNDEFMessage(records: [NFCNDEFPayload.emptyPayload()])
+      } else {
+        throw error
+      }
     }
   }
 

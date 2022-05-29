@@ -12,6 +12,9 @@
 		CD261A95234BEB5C00E3E9EA /* CombineCoreNFC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD261A94234BEB5C00E3E9EA /* CombineCoreNFC.swift */; };
 		CD2C2EB2233AE0F200BF4BAA /* ItemsListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C2EB1233AE0F200BF4BAA /* ItemsListTabView.swift */; };
 		CD2C2EB6233C2F4A00BF4BAA /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2C2EB5233C2F4A00BF4BAA /* CoreNFC.framework */; };
+		CD8F43F62843440700B66236 /* AnyPublisherAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8F43F52843440700B66236 /* AnyPublisherAsync.swift */; };
+		CD8F43F82843581000B66236 /* CombinedNFCNDEFReaderSessionPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8F43F72843581000B66236 /* CombinedNFCNDEFReaderSessionPublisher.swift */; };
+		CD8F43FA2843582F00B66236 /* CombinedNFCNDEFReaderSessionSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8F43F92843582F00B66236 /* CombinedNFCNDEFReaderSessionSubscription.swift */; };
 		CD96A7682842077700528337 /* ScannedNFCTagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD96A7672842077700528337 /* ScannedNFCTagModel.swift */; };
 		CD96A76A284207DF00528337 /* NFCNDEFReaderSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD96A769284207DF00528337 /* NFCNDEFReaderSession.swift */; };
 		CD96A76C2842084700528337 /* NFCNDEFSessionAndTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD96A76B2842084700528337 /* NFCNDEFSessionAndTag.swift */; };
@@ -58,6 +61,9 @@
 		CD2C2EB1233AE0F200BF4BAA /* ItemsListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListTabView.swift; sourceTree = "<group>"; };
 		CD2C2EB3233C2E7A00BF4BAA /* StuffPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StuffPlayground.entitlements; sourceTree = "<group>"; };
 		CD2C2EB5233C2F4A00BF4BAA /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
+		CD8F43F52843440700B66236 /* AnyPublisherAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPublisherAsync.swift; sourceTree = "<group>"; };
+		CD8F43F72843581000B66236 /* CombinedNFCNDEFReaderSessionPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedNFCNDEFReaderSessionPublisher.swift; sourceTree = "<group>"; };
+		CD8F43F92843582F00B66236 /* CombinedNFCNDEFReaderSessionSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedNFCNDEFReaderSessionSubscription.swift; sourceTree = "<group>"; };
 		CD96A7672842077700528337 /* ScannedNFCTagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedNFCTagModel.swift; sourceTree = "<group>"; };
 		CD96A769284207DF00528337 /* NFCNDEFReaderSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCNDEFReaderSession.swift; sourceTree = "<group>"; };
 		CD96A76B2842084700528337 /* NFCNDEFSessionAndTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCNDEFSessionAndTag.swift; sourceTree = "<group>"; };
@@ -129,6 +135,9 @@
 				CD96A769284207DF00528337 /* NFCNDEFReaderSession.swift */,
 				CD96A76B2842084700528337 /* NFCNDEFSessionAndTag.swift */,
 				CD96A76D28420BCF00528337 /* Future.swift */,
+				CD8F43F52843440700B66236 /* AnyPublisherAsync.swift */,
+				CD8F43F72843581000B66236 /* CombinedNFCNDEFReaderSessionPublisher.swift */,
+				CD8F43F92843582F00B66236 /* CombinedNFCNDEFReaderSessionSubscription.swift */,
 			);
 			path = CombinedNFC;
 			sourceTree = "<group>";
@@ -358,8 +367,11 @@
 				CDE996A0233837D7007C05A3 /* StuffPlayground.xcdatamodeld in Sources */,
 				CDFB83382344009C00F5F1BA /* UserData.swift in Sources */,
 				CDC8D4D023625EE50015D588 /* NFCNDEFQueryResponse.swift in Sources */,
+				CD8F43F82843581000B66236 /* CombinedNFCNDEFReaderSessionPublisher.swift in Sources */,
 				CD96A76C2842084700528337 /* NFCNDEFSessionAndTag.swift in Sources */,
 				CD2C2EB2233AE0F200BF4BAA /* ItemsListTabView.swift in Sources */,
+				CD8F43F62843440700B66236 /* AnyPublisherAsync.swift in Sources */,
+				CD8F43FA2843582F00B66236 /* CombinedNFCNDEFReaderSessionSubscription.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +469,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -512,7 +524,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

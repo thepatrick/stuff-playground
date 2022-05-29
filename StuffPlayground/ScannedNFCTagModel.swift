@@ -23,23 +23,14 @@ class ScannedNFCTagModel : ObservableObject {
   private var lastNDEFScanner: CombinedNFCNDEFReaderSession2?
   private var tagThing: AnyCancellable?
   
-  func claimNFCTag() {
-    print("* claimNFCTag!")
+  func claimNFCTag3() async throws {
     lastNDEFScanner = CombinedNFCNDEFReaderSession2()
     
-    tagThing = lastNDEFScanner!.startNDEFScan()
-      .receive(on: RunLoop.main)
-      .sink(receiveCompletion: { completion in
-      switch completion {
-      case .finished:
-        print("Tag done")
-        self.lastNDEFScanner = nil
-      case let .failure(error):
-        print("Maybe Could Not Get Tag? \(error)")
-      }
-    }, receiveValue: { tagId in
-      print("Got tag \(tagId)")
-      self.tagID = tagId
-    })
+    let tagID = try await lastNDEFScanner!.startNDEFScan3().eraseToAnyPublisher().async()
+    
+    await MainActor.run {
+      self.tagID = tagID
+    }
   }
+
 }
