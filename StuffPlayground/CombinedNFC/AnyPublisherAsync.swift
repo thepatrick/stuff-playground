@@ -13,6 +13,8 @@ enum AsyncError: Error {
     case finishedWithoutValue
 }
 
+// TODO: Properly credit https://medium.com/geekculture/from-combine-to-async-await-c08bf1d15b77
+
 extension AnyPublisher {
     func async() async throws -> Output {
         try await withCheckedThrowingContinuation { continuation in

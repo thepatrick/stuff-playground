@@ -20,13 +20,8 @@ class ScannedNFCTagModel : ObservableObject {
     }
   }
   
-  private var lastNDEFScanner: CombinedNFCNDEFReaderSession2?
-  private var tagThing: AnyCancellable?
-  
-  func claimNFCTag3() async throws {
-    lastNDEFScanner = CombinedNFCNDEFReaderSession2()
-    
-    let tagID = try await lastNDEFScanner!.startNDEFScan3().eraseToAnyPublisher().async()
+  func claimNFCTag3() async throws {    
+    let tagID = try await CombinedNFCNDEFReaderSession2().startNDEFScan4()
     
     await MainActor.run {
       self.tagID = tagID

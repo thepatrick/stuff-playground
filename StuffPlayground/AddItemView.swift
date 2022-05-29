@@ -11,6 +11,8 @@ import SwiftUI
 import CoreNFC
 import Combine
 
+// TODO: Properly credit https://www.swiftbysundell.com/articles/building-an-async-swiftui-button/
+
 struct AsyncButton<Label: View>: View {
     var action: () async -> Void
     @ViewBuilder var label: () -> Label

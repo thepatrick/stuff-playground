@@ -111,4 +111,8 @@ class CombinedNFCNDEFReaderSession2 {
         }.eraseToAnyPublisher()
     }.eraseToAnyPublisher()
   }
+  
+  func startNDEFScan4() async throws -> String {
+    return try await CombinedNFCNDEFReaderSession2().startNDEFScan3().eraseToAnyPublisher().async()
+  }
 }
